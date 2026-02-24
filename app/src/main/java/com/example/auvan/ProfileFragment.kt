@@ -33,7 +33,9 @@ class ProfileFragment : Fragment() {
                     user?.let {
                         binding.tvName.text = it.name.ifBlank { "User Set Name" }
                         binding.tvEmail.text = it.email
-                        // If we had a phone or student ID textview, we'd set it here too
+                        binding.tvPhone.text = it.phone.ifBlank { "Not Set" }
+                        binding.tvStudentId.text = it.studentId.ifBlank { "Not Set" }
+                        binding.tvLocation.text = it.location.ifBlank { "Not Set" }
                     }
                 },
                 onFailure = {
